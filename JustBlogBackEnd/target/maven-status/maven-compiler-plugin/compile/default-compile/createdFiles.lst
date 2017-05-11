@@ -1,0 +1,5 @@
+com\niit\JustBlogBackEnd\model\UserDetails.class
+com\niit\JustBlogBackEnd\ApplicationContextConfig.class
+com\niit\JustBlogBackEnd\DaoImpl\UserDaoImpl.class
+com\niit\JustBlogBackEnd\model\BaseDomain.class
+com\niit\JustBlogBackEnd\Dao\UserDao.class

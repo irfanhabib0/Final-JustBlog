@@ -1,0 +1,3 @@
+com\niit\restservice\config\WebConfig.class
+com\niit\restservice\controller\UserController.class
+com\niit\restservice\config\WebAppInitializer.class

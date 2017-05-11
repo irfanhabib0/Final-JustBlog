@@ -44,6 +44,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\project2\RestService\src\main\java\com\niit\restservice\controller\UserController.java"/>
+			<item value="E:\project2\JustBlogRestService\pom.xml"/>
 			<item value="E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlog\model\Event.java"/>
 			<item value="E:\project2\JustBlogBackEnd"/>
 			<item value="E:\project2"/>
@@ -59,12 +61,20 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.niit.RestServicefin"/>
+			<item value="com.niit.RestService"/>
+			<item value="com.niit"/>
+			<item value="com.niit.JustBlogBackEnd"/>
 			<item value="com.niit.JustBlogRestService"/>
 		</list>
 		<list key="groupId">
 			<item value="com.niit"/>
 		</list>
 		<list key="artifactId">
+			<item value="RestServicefin"/>
+			<item value="RestService"/>
+			<item value="RestServices"/>
+			<item value="JustBlogBackEnd"/>
 			<item value="JustBlogRestService"/>
 		</list>
 		<list key="projectNameTemplate">

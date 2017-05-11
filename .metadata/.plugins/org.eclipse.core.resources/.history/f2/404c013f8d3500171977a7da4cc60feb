@@ -1,0 +1,5 @@
+package com.niit.restservice.config;
+
+public class WebAppInitializer {
+
+}
