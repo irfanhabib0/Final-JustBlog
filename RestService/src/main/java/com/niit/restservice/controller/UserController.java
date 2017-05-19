@@ -58,11 +58,11 @@ public class UserController {
 		
 	}
 	
-	@GetMapping("/login/{id}/{password}")
-	public UserDetails checkValidation(@PathVariable("id")int id,@PathVariable("password")String password){
+	@PostMapping("/login/{email}/{password}")
+	public UserDetails checkValidation(@PathVariable("email")String email,@PathVariable("password")String password){
 		
-		if(usd.validate(id, password)==true){
-			userdetails=usd.getId(id);
+		if(usd.validate(email, password)==true){
+			userdetails=usd.getByEmail(email);
 			userdetails.setErrorCode("200");
 			userdetails.setErrorMessage("You have logged in successfully");
 			return userdetails;

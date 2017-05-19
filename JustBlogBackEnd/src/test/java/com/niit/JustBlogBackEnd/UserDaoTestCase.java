@@ -29,20 +29,20 @@ public class UserDaoTestCase {
 		       // context.close();
 	}
 	
-	/*@Test
-	public void UserDaoTestCase()
-	{
-		user.setName("irfan");
-		user.setPassword("pass");
-		user.setAddress("barasat");
-		user.setEmail("irf@yahoo.com");
-		user.setMobile(45673);
-		user.setRole("user");
-		user.setStatus('c');
-		
-		boolean flag=usd.save(user);
-		assertEquals("UserDaoTestCase",true,flag);
-	}*/
+//	@Test
+//	public void UserDaoTestCase()
+//	{
+//		user.setName("irfan");
+//		user.setPassword("pass");
+//		user.setAddress("barasat");
+//		user.setEmail("irf@yahoo.com");
+//		user.setMobile(45673);
+//		user.setRole("user");
+//		user.setStatus('c');
+//		
+//		boolean flag=usd.save(user);
+//		assertEquals("UserDaoTestCase",true,flag);
+//	}
 	
 	
 @Test

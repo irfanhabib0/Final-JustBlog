@@ -56,9 +56,9 @@ public class UserDaoImpl implements UserDao {
 		}
 	}
 
-	public boolean validate(int id, String password) {
-		Query query=sessionFactory.getCurrentSession().createQuery("from UserDetails where id=? and password=?");
-		query.setInteger(0, id);
+	public boolean validate(String email, String password) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from UserDetails where email=? and password=?");
+		query.setString(0, email);
 		query.setString(1, password);
 		
 		if(query.uniqueResult()==null){

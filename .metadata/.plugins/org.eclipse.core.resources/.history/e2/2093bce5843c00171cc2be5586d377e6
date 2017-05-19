@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet"
+	href="resources/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet"
+	href="resources/css/forregis.css" />
+	
+	
+</head>
+<body>
+<div ng-view></div>
+
+</body>
+<script src="lib/angular.min.js"></script>
+<script src="lib/app.js"></script>
+</html>

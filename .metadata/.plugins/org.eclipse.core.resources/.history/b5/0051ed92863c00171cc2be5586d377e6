@@ -1,0 +1,15 @@
+var myapp = angular.module("myprojct", [ 'ng-Route' ]);
+myapp.config(function($routeProvider) {
+
+	$routeProvider.when('/', {
+
+		templateUrl : 'user/registration.html',
+		controller:'UserController',
+		controllerAs:'userCtrl'
+	})
+	
+	.when('/',{
+		templateUrl : 'User/home.html',
+
+});
+});	

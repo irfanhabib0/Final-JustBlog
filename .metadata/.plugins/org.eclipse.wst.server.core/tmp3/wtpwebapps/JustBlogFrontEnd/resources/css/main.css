@@ -1,0 +1,35 @@
+.site-wrapper{min-height:528px;position: relative;top: 60px;margin-bottom: 50px;}
+#myCarousel .carousel-inner img{width:100%;max-height:600px;}
+footer .social{list-style:none;display:inline-block;padding:0;}
+footer .social li{float:left;margin-right:5px;}
+footer{background: #000;color: #7e9d9d;}
+footer .newsletter-box .form-control{width:45%;float:left;margin-bottom:10px;}
+footer .newsletter-box .form-control:first-child{margin-right:5px;}
+footer .newsletter-box .form-control:last-child{width:auto !important;}
+#login .form-block{margin-bottom:10px;float:left;width:100%;}
+#login{max-width:500px;margin:100px auto auto auto;}
+
+#register .form-block{margin-bottom:10px;float:left;width:100%;}
+#register{max-width:500px;margin:100px auto auto auto;}
+.picture-gallery .row:last-of-type img{float:left;width:3%;}
+@media screen and (max-width:991px){	
+#login .form-block:last-child .col-md-6:first-child .btn{margin-bottom:10px;}
+#register .form-block:last-child .col-md-6:first-child .btn{margin-bottom:10px;}
+}
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+   
+    
+    
+    
+    

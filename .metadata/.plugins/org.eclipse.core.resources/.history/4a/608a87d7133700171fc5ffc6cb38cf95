@@ -1,0 +1,5 @@
+package com.niit.JustBlogBackEnd.DaoImpl;
+
+public class BlogDaoImpl {
+
+}

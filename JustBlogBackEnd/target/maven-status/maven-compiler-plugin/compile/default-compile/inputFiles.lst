@@ -1,5 +1,8 @@
 E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\ApplicationContextConfig.java
 E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\Dao\UserDao.java
+E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\DaoImpl\BlogDaoImpl.java
+E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\model\Blog.java
 E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\DaoImpl\UserDaoImpl.java
+E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\Dao\BlogDao.java
 E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\model\UserDetails.java
 E:\project2\JustBlogBackEnd\src\main\java\com\niit\JustBlogBackEnd\model\BaseDomain.java

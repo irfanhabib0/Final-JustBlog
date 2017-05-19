@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet"
+	href="resources/css/forregis.css" />
+</head>
+<body>
+<script src="lib/angular.min.js"></script>
+<script src="lib/app.js"></script>
+
+</body>
+</html>

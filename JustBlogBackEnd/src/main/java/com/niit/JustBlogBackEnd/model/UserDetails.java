@@ -1,11 +1,20 @@
 package com.niit.JustBlogBackEnd.model;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Component("user")
@@ -24,11 +33,22 @@ public class UserDetails extends BaseDomain {
 	
 	private char status;
 	private long mobile;
+	@JsonManagedReference
+	@OneToMany(fetch=FetchType.EAGER,mappedBy="user",cascade=CascadeType.ALL)
+	private Set<Blog> blogs=new HashSet<Blog>();
+	
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public Set<Blog> getBlogs() {
+		return blogs;
+	}
+	public void setBlogs(Set<Blog> blogs) {
+		this.blogs = blogs;
 	}
 	public String getName() {
 		return name;

@@ -48,7 +48,7 @@ public class ApplicationContextConfig {
 		Properties connectionProperties = new Properties();
 
 		connectionProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
-		//connectionProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+		connectionProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		connectionProperties.setProperty("hibernate.show_sql", "true");
 		connectionProperties.setProperty("hibernate.format_sql", "true");
 		sessionBuilder.addProperties(connectionProperties);
