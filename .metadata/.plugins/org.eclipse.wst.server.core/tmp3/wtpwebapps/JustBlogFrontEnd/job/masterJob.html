@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet"
+	href="resources/css/jobpostrelatd.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/blogpostrelatd.css" />
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+
+	<div class="row">
+		<div class="col-md-6">
+		<div ng-include="'job/jobpostform.html'"></div>
+		<div ng-include="'job/postedjoblist.html'"></div>
+		<div ng-include="'job/afterapplying.html'"></div>
+		</div>
+		<div class="col-sm-6">
+			<div class="click">
+				<h1>
+					<b>other links</b>
+				</h1>
+			</div>
+			<li><a href="" class="btn btn-info"
+				ng-click="jobCtrl.createlistOfJob()"><button type="button"
+						class="btn btn-success">see all the posted jobs</button></a><br>
+				<br></li>
+		</div>
+	</div>
+</body>
+</html>

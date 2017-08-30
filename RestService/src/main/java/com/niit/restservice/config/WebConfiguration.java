@@ -13,19 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages="com.niit")
 
 public class WebConfiguration {
-	@Bean
-	public ViewResolver viewResolver() {
-		
-       // UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
-		
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setViewClass(JstlView.class);
-		viewResolver.setPrefix("/WEB-INF/");
-		viewResolver.setSuffix(".jsp");
-		
-
-		return viewResolver;
-	}
+	
 
 }
 

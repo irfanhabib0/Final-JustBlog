@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+<div class="container" ng-init="frndCtrl.getAllmyConfirmedfriend()">
+<div class="row" data-ng-repeat="confirmedfrnds in frndCtrl.confirmedfriendsListshow">
+		        <h1>see all confirmed friends</h1>
+				<div class="panel panel-success">
+			<div class="panel-heading"><strong>Friend Name:
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{confirmedfrnds.user.fullname}}</strong></div>
+			<div class="panel-body">Friend email:
+				:&nbsp;&nbsp;&nbsp;&nbsp;{{confirmedfrnds.user.email}}</div>
+			<div class="panel-body">online status:
+				:&nbsp;&nbsp;&nbsp;&nbsp;{{confirmedfrnds.user.isonline}}</div>	
+				
+				
+				</div>
+		
+		<a href="#!chat" class="btn btn-info btn-lg">
+           click me
+        </a>
+
+		
+	</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+<div class="container" ng-init="frndCtrl.getFriendswhoRequestedyou()">
+<div class="row" data-ng-repeat="frrnds in frndCtrl.FriendsListshow">
+		
+				<div class="panel panel-success">
+			<div class="panel-heading"><strong>Friend Name:
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{frrnds.friend.fullname}}</strong></div>
+			<div class="panel-body">Friend email:
+				:&nbsp;&nbsp;&nbsp;&nbsp;{{frrnds.friend.email}}</div>
+				
+				
+				</div>
+				
+				<div class="panel panel-success">
+			
+			<div class="panel-body"><a href="" class="btn btn-primary"
+						ng-click="frndCtrl.getAcceptThefriend(frrnds)">Accept</a></div>
+						<div class="panel-body"><a href="" class="btn btn-warning"
+						ng-click="frndCtrl.getRejectThefriend(frrnds)">Reject</a></div> 
+				
+				
+				</div>
+		
+
+		
+	</div>
+	</div>
+
+</body>
+</html>

@@ -1,2 +1,3 @@
 com\niit\JustBlogBackEnd\BlogDaoTestCase.class
 com\niit\JustBlogBackEnd\UserDaoTestCase.class
+com\niit\JustBlogBackEnd\CommentDaoTestCase.class

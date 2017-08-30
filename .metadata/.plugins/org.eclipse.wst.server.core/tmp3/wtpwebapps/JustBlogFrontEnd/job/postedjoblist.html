@@ -1,0 +1,28 @@
+
+<div ng-show="jobCtrl.joblist">
+	<div class="row" ng-repeat=" jobb in jobCtrl.jobarray">
+		<div class="col-md-10">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><a class="post-title" href="#">{{jobb.job_title}}</a></strong>
+				</div>
+				<div class="panel-body">
+					<p>Below is the job description!!</p>
+					<div class="alert alert-success">
+						<h3>{{jobb.job_description}}</h3>
+					</div>
+				</div>
+				<div class="panel-body">
+					<h3>Below is the job qualification!!</h3>
+					<div class="alert alert-success">
+						<h3>{{jobb.qualification}}</h3>
+					</div>
+				</div>
+				<div class="panel-footer">
+				<a href="" class="btn btn-primary" ng-click="jobCtrl.applytheJob(jobb)">Apply the job</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	</div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+<section id="contact" class="content-section text-center">
+	<div class="contact-section">
+		<div class="container">
+			<h2>Post A Event</h2>
+			<hr size="50">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<form class="form-horizontal">
+						<form method="post" enctype="multipart/form-data">
+							<div class="form-group">
+								<label for="eventName">Event Name</label>
+								<textarea class="form-control" placeholder="Event Name"
+									ng-model="eventCtrl.event.eventName"></textarea>
+							</div>
+
+							<div class="form-group ">
+								<label for="eventDesc">Event Description</label>
+								<textarea class="form-control" placeholder="Event Description"
+									ng-model="eventCtrl.event.eventDesc"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="eventVenue">Event Venue</label> <input type="text"
+									class="form-control" id="eventVenue" placeholder="event venue"
+									ng-model="eventCtrl.event.eventVenue">
+							</div>
+
+							<div>
+
+								<div class="form-group">
+									<label for="venue">Select a file:</label> <input
+										class="inline-block" type="file" name="file" ng-model="file"
+										data-rule-required="true" id="file">
+								</div>
+								<input type="submit" value="Upload It" ng-click="eventCtrl.uploadEvent()"
+									style="font-face: 'Comic Sans MS'; font-size: larger; 
+									color: teal; background-color: #FFFFC0; border: 3pt ridge lightgrey" />
+						</form>
+					</form>
+
+					<hr>
+				</div>
+			</div>
+			<!-- -----code of other link----- -->
+			<div class="col-md-6">
+				<div class="click">
+					<h1>
+						<b>other links</b>
+					</h1>
+				</div>
+				
+				<li><a href="" class="btn btn-info"
+					ng-click="eventCtrl.getAllEvent()"><button type="button"
+							class="btn btn-primary">List Of Events</button></a><br> <br></li>
+				
+
+			</div>
+			
+			
+		</div>
+	</div>
+</section>
+
+</body>
+</html>

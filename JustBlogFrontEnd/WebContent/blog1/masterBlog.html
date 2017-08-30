@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+<div class="col-md-9">
+<div ng-include="'blog1/NewBlog.html'"></div>
+</div>
+		<div class="col-md-3">
+			<div class="click">
+				<h1>
+					<b>other links</b>
+				</h1>
+			</div>
+			<li><a href="" class="btn btn-info"
+				ng-click="blogCtrl.showMyBlog()"><button type="button"
+						class="btn btn-success">See my blog</button></a><br> <br></li>
+			<li><a href="" class="btn btn-info"
+				ng-click="blogCtrl.createlistOfBlog()"><button type="button"
+						class="btn btn-primary">List Of Blogs</button></a><br> <br></li>
+			<li><a href="#" class="btn btn-warning"><button
+						type="button" class="btn btn-warning">manage request</button></a></li>
+		</div>
+	</div>
+
+</body>
+</html>

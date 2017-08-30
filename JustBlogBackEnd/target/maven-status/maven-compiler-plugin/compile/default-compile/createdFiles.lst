@@ -1,8 +1,14 @@
-com\niit\JustBlogBackEnd\model\UserDetails.class
 com\niit\JustBlogBackEnd\ApplicationContextConfig.class
-com\niit\JustBlogBackEnd\Dao\BlogDao.class
 com\niit\JustBlogBackEnd\DaoImpl\UserDaoImpl.class
-com\niit\JustBlogBackEnd\DaoImpl\BlogDaoImpl.class
+com\niit\JustBlogBackEnd\DaoImpl\JobDaoImpl.class
 com\niit\JustBlogBackEnd\model\BaseDomain.class
 com\niit\JustBlogBackEnd\Dao\UserDao.class
 com\niit\JustBlogBackEnd\model\Blog.class
+com\niit\JustBlogBackEnd\model\Job.class
+com\niit\JustBlogBackEnd\model\UserDetails.class
+com\niit\JustBlogBackEnd\Dao\BlogDao.class
+com\niit\JustBlogBackEnd\Dao\JobDao.class
+com\niit\JustBlogBackEnd\Dao\CommentDao.class
+com\niit\JustBlogBackEnd\DaoImpl\CommentDaoImpl.class
+com\niit\JustBlogBackEnd\DaoImpl\BlogDaoImpl.class
+com\niit\JustBlogBackEnd\model\Comments.class

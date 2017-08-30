@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link type="text/css" rel="stylesheet"
+	href="resources/css/blogpostrelatd.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/chat_box-relatd.css" />
+
+
+<title>Insert title here</title>
+
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+<div class="row">
+	<div class="col-md-9 col-md-offset-2">
+		<h1>displaying all forums:{{3+2}}</h1>
+		<div class="row" data-ng-repeat="f in forumCtrl.ForumList">
+		
+				<div class="panel panel-success">
+			<div class="panel-heading"><strong>Forum Name:
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{f.title}}</strong></div>
+			<div class="panel-body">Forum Content
+				:&nbsp;&nbsp;&nbsp;&nbsp;{{f.forum_descripton}}</div>
+				
+				<div class="panel-body">
+				<a href="#!patricularForum/{{f.forumId}}">Comment!</a>
+				</div>
+				</div>
+		<!-- </div>
+			<div>{{f.title}}</div>
+		</div> -->
+
+		
+	</div>
+	</div>
+
+
+	<div class="col-md-3">
+		<a href="#!/posttheforum" class="btn btn-primary"
+			ng-show="forumCtrl.isAdmin">Post the forum</a>
+	</div>
+
+</div>
+
+</body>
+</html>

@@ -24,40 +24,54 @@ public class UserDetails extends BaseDomain {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	
 	private int id;
-	private String name;
+	private String fullname;
 	private String address;
 	private String role;
 	@Column(unique=true)
 	private String email;
 	private String password;
+	@Column(unique=true)
+	private String username;
 	
 	private char status;
+	private String isonline;
+	public String getIsonline() {
+		return isonline;
+	}
+	public void setIsonline(String isonline) {
+		this.isonline = isonline;
+	}
 	private long mobile;
-	@JsonManagedReference
+	/*@JsonManagedReference(value="userblog")
 	@OneToMany(fetch=FetchType.EAGER,mappedBy="user",cascade=CascadeType.ALL)
-	private Set<Blog> blogs=new HashSet<Blog>();
-	
-	
+	private Set<Blog> blogs=new HashSet<Blog>();*/
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Set<Blog> getBlogs() {
+	/*public Set<Blog> getBlogs() {
 		return blogs;
 	}
 	public void setBlogs(Set<Blog> blogs) {
 		this.blogs = blogs;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	}*/
+	
 	public String getAddress() {
 		return address;
+	}
+	public String getFullname() {
+		return fullname;
+	}
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public void setAddress(String address) {
 		this.address = address;
@@ -93,10 +107,5 @@ public class UserDetails extends BaseDomain {
 		this.mobile = mobile;
 	}
 
-	
-	
-	
-	
-	
 }
 

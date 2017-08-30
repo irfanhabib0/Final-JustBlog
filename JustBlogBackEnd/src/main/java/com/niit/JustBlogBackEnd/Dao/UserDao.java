@@ -12,6 +12,7 @@ public interface UserDao {
 	public boolean deleteUser(UserDetails user);
 	public boolean validate(String email,String password);
 	public UserDetails getByEmail(String email);
+	public void isOnline(int id);
 	
 
 }

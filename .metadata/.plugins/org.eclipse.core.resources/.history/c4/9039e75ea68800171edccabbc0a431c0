@@ -1,0 +1,141 @@
+console.log("loaded blog controller");
+myapp.controller('BlogController', [
+		'BlogService',
+		'$http',
+		'$scope',
+		'$location',
+		'$rootScope',
+		function(BlogService, $http, $scope, $location, $rootScope) {
+			var self = this;
+			// self.user = {};
+			self.blog = {};
+			self.comments = {};
+			self.blogarray = [];
+			self.myarray = [];
+			
+			self.allBlogs = false;
+			self.makeBlog = true;
+			self.madebymeblogs = false;
+			self.viewComments=false;
+			self.editbyadmin=false;
+
+			self.createtheBlog = function() {
+				console.log('create the blog');
+				// console.log('self.guset');
+				console.log(self.blog);
+				self.blog.user = $rootScope.currentUser;
+				console.log($rootScope.currentUser);
+				console.log(self.blog);
+				BlogService.save(self.blog).then(function(data) {
+					// console.log(response.data);
+					self.blog = data;
+					console.log(self.blog);
+				}, function(error) {
+					console.log(error);
+				});
+			}
+
+			self.createlistOfBlog = function() {
+				console.log('create the list of blog');
+				// console.log('self.guset');
+				console.log(self.blogarray);
+				BlogService.getAll().then(function(data) {
+					self.blogarray = data;
+					console.log(self.blogarray);
+					// $location.path('/showinglist');
+					self.allBlogs = true;
+					self.makeBlog = false;
+				}, function(error) {
+					console.log(error);
+				});
+			}
+
+			self.showMyBlog = function() {
+				console.log('create the list of blog');
+				// console.log('self.guset');
+				console.log(self.myarray);
+				self.blog.user = $rootScope.currentUser;
+				console.log(self.blog.user);
+
+				BlogService.getAllMybloggs($rootScope.currentUser.id).then(
+						function(data) {
+							self.myarray = data;
+							console.log(self.myarray);
+							// $location.path('/showinglist');
+							self.allBlogs = true;
+							self.makeBlog = false;
+							self.madebymeblogs = true;
+						}, function(error) {
+							console.log(error);
+						});
+			}
+
+			self.getTheBlogg = function(blog) {
+				console.log('gets the patricular blog with its titlle');
+				// console.log('self.guset');
+				console.log(self.blog);
+				BlogService.getBlogBody().then(function(data) {
+					self.blog = data;
+					console.log(self.blog);
+					// $location.path('/showinglist');
+					self.allBlogs = true;
+					self.makeBlog = false;
+				}, function(error) {
+					console.log(error);
+				});
+			}
+
+			self.addNewComments = function() {
+				console.log('create the list of comments');
+				// console.log('self.guset');
+				self.comments.user=$rootScope.currentUser;
+				console.log(self.comments);
+				BlogService.getAllComments(self.comments)
+				.then(function(data) {
+					self.comments = data;
+					console.log(self.comments);
+					// $location.path('/showinglist');
+					self.allBlogs = true;
+					self.makeBlog = false;
+				}, function(error) {
+					console.log(error);
+				});
+			}
+			self.showAllTheComments = function(blog) {
+				self.selectedBlog=blog;
+				console.log(self.selectedBlog);
+				console.log("-----blog content----")
+				console.log(blog);
+				self.viewComments=true;
+				self.allBlogs = false;
+				self.makeBlog = false;
+				self.madebymeblogs = false;
+				
+				
+				
+				
+			}
+			
+			
+			 self.getAdminBlogList = function(blgg) {
+	           	  self.allBlogs=false;
+	    			self.editbyadmin=true;
+	    			
+	  				console.log("Admin BlogList controller called");
+	  				self.selectedBlog=blgg;
+	  				console.log(self.selectedBlog);
+	  				
+	  			}
+			 
+			 self.getUpdateBlog=function(){
+				 BlogService.getfinalupdate(self.blog).then(function(data) {
+						self.blog = data;
+						console.log(self.blog);
+						// $location.path('/showinglist');
+						
+					}, function(error) {
+						console.log(error);
+					});
+			 }
+
+		} ])

@@ -32,11 +32,11 @@ public class UserDaoTestCase {
 //	@Test
 //	public void UserDaoTestCase()
 //	{
-//		user.setName("irfan");
+//		user.setName("shabnam");
 //		user.setPassword("pass");
-//		user.setAddress("barasat");
-//		user.setEmail("irf@yahoo.com");
-//		user.setMobile(45673);
+//		user.setAddress("Bardwan");
+//		user.setEmail("shabnams07gmail.com");
+//		user.setMobile(7654);
 //		user.setRole("user");
 //		user.setStatus('c');
 //		
@@ -45,11 +45,11 @@ public class UserDaoTestCase {
 //	}
 	
 	
-@Test
+/*@Test
 	public void listUserDaoTestCase()	{
 	 List<UserDetails> us=	usd.getAll();
 	 assertEquals("listUserDaoTestCase",2,us.size());
 	}
 	
-
+*/
 }

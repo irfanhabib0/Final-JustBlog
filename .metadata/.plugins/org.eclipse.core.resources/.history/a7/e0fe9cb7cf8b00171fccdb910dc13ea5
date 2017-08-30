@@ -1,0 +1,91 @@
+console.log("loaded user controller");
+myapp.controller('UserController', [
+		'UserService',
+		'$http',
+		'$scope',
+		'$location',
+		'$rootScope',
+		'$cookieStore',
+		function(UserService, $http, $scope, $location,$rootScope,$cookieStore) {
+			var self = this;
+			self.user = {};
+			self.guest={};
+			self.regiscontnt={};
+			self.userproficontent={};
+			//self.userprofyll={};
+			/*
+			 * this.addUser=function(){ UserService.addUser() .then(
+			 * function(response) { console.log(response.data);
+			 * $location.path('/user'); }, function(error){
+			 * console.log(error);})}
+			 */
+            self.gettingname=$cookieStore.get('irfan');
+			self.validateUser = function() {
+				console.log('validate user called');
+				console.log('self.guset');
+				console.log(self.guest);
+				UserService.validates(self.guest).then(
+						function(data) {
+							console.log(data);
+							self.guest=data;
+							console.log(self.guest);
+							$rootScope.currentUser=self.guest;
+							$cookieStore.put('irfan',self.guest);
+							console.log($rootScope.currentUser);
+							$location.path('/home');
+						}, function(error) {
+							alert("alerting!!");
+							console.log(error);
+						});
+			}
+			
+			self.registerTheUser = function() {
+				console.log('register user called');
+				console.log('self.regiscontnt');
+				console.log(self.regiscontnt);
+				UserService.register(self.regiscontnt).then(
+						function(data) {
+							console.log(data);
+							/*self.regiscontnt=data;
+							console.log(self.regiscontnt);*/
+							alert('Congratulation!!! You have been registered successfully!!! ')
+							//$location.path('/');
+						}, function(error) {
+							
+							console.log(error);
+						});
+			}
+			
+			self.takeTheUserProfile = function() {
+				console.log('userprofile is called');
+				console.log('self.userproficontent');
+				self.userproficontent.user=$rootScope.currentUser;
+				console.log(self.userproficontent);
+				UserService.acceptData(self.userproficontent).then(
+						function(data) {
+							console.log(data);
+							self.userproficontent=data;
+							
+							console.log(self.userproficontent);
+							
+							$location.path('/userprofile');
+						}, function(error) {
+							
+							console.log(error);
+						});
+			}
+			
+			self.userlogout=function(){
+				console.log('logout controller called');
+			  // var data= {userDetails:$rootScope.currentUser};
+				UserService.logout($rootScope.currentUser).then(function(success){
+				   alert('Logout Successfully');
+				   $location.path('/');
+			   },function(error){
+				   alert('Not logged out');
+			   });
+			}
+			
+			
+
+		} ])

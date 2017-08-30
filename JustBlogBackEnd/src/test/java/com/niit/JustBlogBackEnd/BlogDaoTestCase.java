@@ -2,6 +2,7 @@ package com.niit.JustBlogBackEnd;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -32,27 +33,28 @@ private static UserDao usd;
 	}
 	
 //	@Test
-//	public void BlogDaoTestCase()
+//	public void createBlogDaoTestCase()
 //	{
-//		blog.setTitle("Automation in India");
-//		blog.setDescription(" reduces panIndia Recruitment");
-//		//blog.setDateTime(2016-11-16);
+//		blog.setTitle("Make  in India project");
+//		blog.setDescription(" increases panIndia Recruitment and revenue");
+//		
+//		blog.setCreateDate(new java.sql.Date(System.currentTimeMillis()));
 //		blog.setReason("for fastsoeed");
-//		blog.setLikes(45);
+//		blog.setLikes(50);
 //		blog.setViews(76);
 //		blog.setStatus('c');
-//		blog.setUsers(usd.getId(121));
+//		blog.setUser(usd.getId(121));
 //		
 //		boolean flag=blogDao.save(blog);
-//		assertEquals("BlogDaoTestCase",true,flag);
+//		assertEquals("createBlogDaoTestCase",true,flag);
 //	}
-//	
+/*//	
 	@Test
 	public void listBlogDaoTestCase()	{
 	 List<Blog> bg=	blogDao.getAll();
 	 assertEquals("listBlogDaoTestCase",5,bg.size());
 	}
-
+*/
 //	@Test
 //	public void updationBlogDaoTestCase()	{
 //	 Blog ub=	 blogDao.getById(67);

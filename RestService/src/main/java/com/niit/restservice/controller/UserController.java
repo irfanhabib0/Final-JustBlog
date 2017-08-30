@@ -41,41 +41,71 @@ public class UserController {
 		System.out.println("hello called");
 		return "index";
 	}
-	
+
 	@PostMapping("/registerUser")
-	public ResponseEntity<UserDetails> addUser(@RequestBody UserDetails user)
-	{
-//		user=usd.getByEmail(email);
-//		if(user==null){
-			usd.save(user);
-//			user.setErrorCode("200");
-//			user.setErrorMessage("Thanks for registration");
-//		}else{
-//			user.setErrorCode("800");
-//			user.setErrorMessage("Please choose another email ");
-//		}
-		return new ResponseEntity<UserDetails>(user,HttpStatus.OK);
-		
+	public ResponseEntity<UserDetails> addUser(@RequestBody UserDetails user) {
+		// user=usd.getByEmail(email);
+		// if(user==null){
+		usd.save(user);
+		// user.setErrorCode("200");
+		// user.setErrorMessage("Thanks for registration");
+		// }else{
+		// user.setErrorCode("800");
+		// user.setErrorMessage("Please choose another email ");
+		// }
+		return new ResponseEntity<UserDetails>(user, HttpStatus.OK);
+
 	}
-	
-	@PostMapping("/login/{email}/{password}")
-	public UserDetails checkValidation(@PathVariable("email")String email,@PathVariable("password")String password){
-		
-		if(usd.validate(email, password)==true){
-			userdetails=usd.getByEmail(email);
+
+	// @PostMapping("/login/{email}/{password}")
+	// public UserDetails checkValidation(@PathVariable("email")String
+	// email,@PathVariable("password")String password){
+	//
+	// if(usd.validate(email, password)==true){
+	// userdetails=usd.getByEmail(email);
+	// userdetails.setErrorCode("200");
+	// userdetails.setErrorMessage("You have logged in successfully");
+	// return userdetails;
+	// }else{
+	// UserDetails usr=new UserDetails();
+	// usr.setErrorCode("404");
+	// usr.setErrorMessage("Invalid Credentials..");
+	// return usr;
+	// }
+	//
+	// }
+
+	@PostMapping("/login")
+	public ResponseEntity<UserDetails> validateUser(@RequestBody UserDetails u) {
+		userdetails = usd.getByEmail(u.getEmail());
+		if (userdetails != null && ((u.getPassword()).equals(userdetails.getPassword()))) {
+            
+			userdetails.setIsonline("online");
+			usd.isOnline(userdetails.getId());
 			userdetails.setErrorCode("200");
-			userdetails.setErrorMessage("You have logged in successfully");
-			return userdetails;
-		}else{
-			UserDetails usr=new UserDetails();
-			usr.setErrorCode("404");
-			usr.setErrorMessage("Invalid Credentials..");
-			return usr;
+			userdetails.setErrorMessage("You have logged in successfully " + userdetails.getFullname());
+			return new ResponseEntity<UserDetails>(userdetails, HttpStatus.OK);
+
+		} else {
+
+			u.setErrorCode("404");
+			u.setErrorMessage("Invalid Credentials..");
+			return new ResponseEntity<UserDetails>(u, HttpStatus.NOT_FOUND);
 		}
-		
+
 	}
 	
+	
+	@PostMapping("/updateOffline")
+	public ResponseEntity<UserDetails> logoutUser(@RequestBody UserDetails user) {
+		user.setIsonline("offline");
 		
+		usd.update(user);
+		
+		return new ResponseEntity<UserDetails>(user, HttpStatus.OK);
+
+	}
+	
 	
 
 }

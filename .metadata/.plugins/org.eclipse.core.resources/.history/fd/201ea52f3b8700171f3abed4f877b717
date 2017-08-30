@@ -1,0 +1,95 @@
+myapp.service('BlogService', [
+		'$http',
+		'$rootScope',
+		'$q',
+		'RESTURL',
+		function($http, $rootScope, $q, RESTURL) {
+			this.save = function(blog) {
+				console.log("blog service called");
+				var deferred = $q.defer();
+				$http.post(RESTURL + '/addblog',blog).then(
+						function(response) {
+							console.log(response.data);
+							deferred.resolve(response.data);
+						}, function(error) {
+							deferred.reject(error);
+						});
+				return deferred.promise;
+			}
+			
+			this.getAll = function(blogarray) {
+				console.log("bloglist service called");
+				var deferred = $q.defer();
+				$http.get(RESTURL + '/getallblog',blogarray).then(
+						function(response) {
+							console.log(response.data);
+							deferred.resolve(response.data);
+						}, function(error) {
+							deferred.reject(error);
+						});
+				return deferred.promise;
+			}	
+			
+			this.getAllMybloggs = function(id) {
+				console.log("bloglist service called");
+				var deferred = $q.defer();
+				$http.get(RESTURL + '/getbloguserid/'+id).then(
+						function(response) {
+							console.log(response.data);
+							deferred.resolve(response.data);
+						}, function(error) {
+							deferred.reject(error);
+						});
+				return deferred.promise;
+			}
+			
+			this.getAllComments = function(comments) {
+				console.log("comment service called");
+				var deferred = $q.defer();
+				$http.post(RESTURL + '/addcomments',comments).then(
+						function(response) {
+							console.log(response.data);
+							deferred.resolve(response.data);
+						}, function(error) {
+							deferred.reject(error);
+						});
+				return deferred.promise;
+			}	
+		
+			this.displayAllComments = function(showComments) {
+				console.log("commentLIST service called");
+				var deferred = $q.defer();
+				$http.get(RESTURL + '/getallcomments',showComments).then(
+						function(response) {
+							console.log(response.data);
+							deferred.resolve(response.data);
+						}, function(error) {
+							deferred.reject(error);
+						});
+				return deferred.promise;
+			}
+			
+			this.getfinalupdate = function(blog) {
+				
+				var deferred = $q.defer();
+				$http.get(RESTURL + '/updateblog',data).then(
+						function(response) {
+							console.log(response.data);
+							deferred.resolve(response.data);
+						}, function(error) {
+							deferred.reject(error);
+						});
+				return deferred.promise;
+			}	
+		
+		
+		
+		
+		
+		
+		
+		
+		}
+		
+
+])

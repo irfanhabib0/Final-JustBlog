@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+WELCOME TO HOME
+<div class="container">
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/H.html'"></div>
+            </div>
+		
+		</div>
+<div class="row">
+<div class="col-sm-4">
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLOG</div>
+        <div class="panel-body"><img src="resources/pictures/blog1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="caption">
+                                    <center>   
+                                    <h4>HERE</h4>
+                                    <h4>YOU CAN MAKE BLOG</h4>
+                                    <h4>
+                                    this is blogg!!
+                                    </h4>
+                                    </center>
+                                    </div>
+        <div class="panel-footer">.
+        <a href="#!blog" class="btn btn-info btn-lg">
+           click me
+        </a>
+        </div>
+      </div>
+    </div>
+  <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">JOB</div>
+        <div class="panel-body"><img src="resources/pictures/job8.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="caption">
+                                    <center>   
+                                    <h4>HERE</h4>
+                                    <h4>YOU CAN FIND JOBS</h4>
+                                    <h4>
+                                    this is jobb.
+                                    </h4>
+                                    </center>
+                                    </div>
+        <div class="panel-footer">.
+        <a href="#!job" class="btn btn-info btn-lg">
+           click me
+        </a>
+     
+        </div>
+      </div>
+    </div> 
+    
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">FRIEND</div>
+        <div class="panel-body"><img src="resources/pictures/friends2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="caption">
+                                    <center>   
+                                    
+                                    <h4>
+                                    HERE IS YOUR FRIENDS!!
+                                    </h4>
+                                    </center>
+                                    </div>
+        <div class="panel-footer">.
+        <a href="#!friend" class="btn btn-info btn-lg">
+           click me
+        </a>
+      
+        </div>
+      </div>
+    </div> 
+        
+    
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">FORUM</div>
+        <div class="panel-body"><img src="resources/pictures/event1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="caption">
+                                    <center>   
+                                    
+                                    <h4>
+                                    HERE IS FORUMS...
+                                    </h4>
+                                    </center>
+                                    </div>
+        <div class="panel-footer">.
+        <a href="#!forum" class="btn btn-info btn-lg">
+           click me
+        </a>
+     
+        </div>
+      </div>
+    </div>   
+    
+</div>
+<div class="row">
+<div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">EVENTS</div>
+        <div class="panel-body"><img src="resources/pictures/event04.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="caption">
+                                    <center>   
+                                    
+                                    <h4>
+                                    HERE IS EVENTS...
+                                    </h4>
+                                    </center>
+                                    </div>
+        <div class="panel-footer">.
+        <a href="#!event" class="btn btn-info btn-lg">
+           click me
+        </a>
+     
+        </div>
+      </div>
+    </div>   
+
+</div>
+
+
+</div>
+</body>
+</html>

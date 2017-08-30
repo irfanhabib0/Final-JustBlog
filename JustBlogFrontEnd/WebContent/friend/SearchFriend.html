@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<form class="form-inline">
+<div class="form-group">
+<label>Enter The FullName Here</label>
+<input type="text" class="form-control" ng-model="searchFriends"/>
+</div>
+<a href="" class="btn btn-primary"
+						ng-click="frndCtrl.searchFriend()">Search</a>
+</form>
+<hr>
+
+<table class="table table-striped">
+<thead>
+<tr>
+<td><strong>fullname</strong></td>
+<td><strong>email</strong></td>
+<td><strong>address</strong></td>
+<td><strong>mobile no</strong></td>
+<td><strong>username</strong></td>
+</tr>
+</thead>
+<tr ng-repeat="ofrnd in  frndCtrl.FriendList|filter:searchFriends">
+<td>{{ofrnd.fullname}}</td>
+<td>{{ofrnd.email}}</td>
+<td>{{ofrnd.address}}</td>
+<td>{{ofrnd.mobile}}</td>
+<td>{{ofrnd.username}}</td>
+<td><a href="" class="btn btn-primary"
+						ng-click="frndCtrl.sendfrndRqst(ofrnd)">Send Friend Request</a></td>
+
+</tr>
+</table>
+</div>
+
+<div class="col-md-4">
+				<div class="click">
+					<h1>
+						<b>other links</b>
+					</h1>
+				</div>
+				<li><a href="" class="btn btn-info"
+					ng-click="frndCtrl.getreqestedFriend()"><button type="button"
+							class="btn btn-success">See all friendreqst send</button></a><br> <br></li>
+				<li><a href="" class="btn btn-info"
+					ng-click="frndCtrl.getFriendswhoRequestedyou()"><button type="button"
+							class="btn btn-primary">see all friends who send you Request</button></a><br> <br></li>
+				 <li><a href="#" class="btn btn-warning" ng-click="frndCtrl.getAllmyConfirmedfriend()"><button
+							type="button" class="btn btn-warning">See all confirmed friends</button></a></li>  
+
+			</div>
+
+
+
+
+
+
+
+</div>
+<!-- <div class="row">
+<div class="col-md-7">
+<a href="" class="btn btn-primary"
+						ng-click="frndCtrl.sendfrndRqst(ofrnd)">Send Friend Request</a>
+</div>
+</div> -->
+
+</body>
+</html>

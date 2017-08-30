@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">
+<link type="text/css" rel="stylesheet"
+	href="resources/css/blogpostrelatd.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/chat_box-relatd.css" />
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+
+            <div class="profile-content">
+                <div ng-include="'user/Header2.html'"></div>
+            </div>
+		
+		</div>
+
+
+<div class="row">
+	<div class="col-md-9 col-md-offset-2">
+		<h1>displaying all events:{{3+2}}</h1>
+		<div class="row" data-ng-repeat="e in eventCtrl.EventList">
+		
+				<div class="panel panel-success">
+			<div class="panel-heading"><strong>Event Name:
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{e.eventName}}</strong></div>
+			<div class="panel-body">Event Description
+				:&nbsp;&nbsp;&nbsp;&nbsp;{{e.eventDesc}}</div>
+			<div class="panel-body">Event Venue
+				:&nbsp;&nbsp;&nbsp;&nbsp;{{e.eventVenue}}</div>	
+				<div class="panel-body">
+				<img src="D:/Collaboration/{{event.uploadUrl}}" alt="HTML5 Icon" style="width:128px;height:128px;">
+				</div>
+				
+				</div>
+		<!-- </div>
+			<div>{{f.title}}</div>
+		</div> -->
+
+		
+	</div>
+	</div>
+		
+
+</div>
+
+</body>
+</html>

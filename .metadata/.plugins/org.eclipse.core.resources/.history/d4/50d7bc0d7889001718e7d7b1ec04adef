@@ -1,0 +1,108 @@
+var myapp = angular.module("myprojct", [ 'ngRoute','ngCookies' ]);
+myapp.constant('RESTURL', 'http://localhost:8036/RestServices');
+//myapp.config.$inject=['$routeProvider', '$locationProvider'];
+myapp.config(function($routeProvider, $locationProvider) {
+
+	$routeProvider.when('/', {
+		templateUrl : 'user/registration.html',
+		controller : 'UserController',
+		controllerAs : 'userCtrl'
+	})
+
+	.when('/home', {
+		templateUrl : 'user/myprofile.html',
+
+	}).when('/blog', {
+		templateUrl : 'blog/bloglists.html',
+		controller : 'BlogController',
+		controllerAs : 'blogCtrl'
+	}).when('/job', {
+		templateUrl : 'job/masterJob.html',
+		controller : 'JobController',
+		controllerAs : 'jobCtrl'
+	}).when('/userprofile', {
+		templateUrl : 'user/userProfile.html',
+		controller : 'UserController',
+		controllerAs : 'userCtrl'
+	}).when('/forum', {
+		templateUrl : 'forum/forumlist.html',
+		controller : 'ForumController',
+		controllerAs : 'forumCtrl'
+	}).when('/posttheforum', {
+		templateUrl : 'forum/postforum.html',
+		controller : 'ForumController',
+		controllerAs : 'forumCtrl'
+	}).when('/patricularForum/:forumId', {
+		templateUrl : 'forum/ForumComment.html',
+		controller : 'ForumController',
+		controllerAs : 'forumCtrl'
+	}).when('/friend', {
+		templateUrl : 'friend/SearchFriend.html',
+		controller : 'FriendController',
+		controllerAs : 'frndCtrl'
+	}).when('/toshowfrnds', {
+		templateUrl : 'friend/ShownallFriends.html',
+		controller : 'FriendController',
+		controllerAs : 'frndCtrl'
+	}).when('/toshowfrndswhosendReqst', {
+		templateUrl : 'friend/ShowfriendsRequestedyou.html',
+		controller : 'FriendController',
+		controllerAs : 'frndCtrl'
+	}).when('/toseeallmyconfirmedfrnds', {
+		templateUrl : 'friend/myconfirmedfrnds.html',
+		controller : 'FriendController',
+		controllerAs : 'frndCtrl'
+	}).when('/chat', {
+		templateUrl : 'chat/chatmessage.html',
+		controller : 'ChatController'
+		
+	}).when('/uploadpic', {
+		templateUrl : 'picfylupload/profylpicUpload.html',
+		controller : 'UploadController',
+		controllerAs : 'uploadCtrl'
+	}).when('/event', {
+		templateUrl : 'event/event.html',
+		controller : 'EventController',
+		controllerAs : 'eventCtrl'
+	}).when('/evntlist', {
+		templateUrl : 'event/eventlist.html',
+		controller : 'EventController',
+		controllerAs : 'eventCtrl'
+	})
+	
+	$rootScope.$on('$locationChangeStart', function (event, next, current) {
+        // redirect to login page if not logged in and trying to access a restricted page
+        var restrictedPage = $.inArray($location.path(), ['/']) === -1;
+        var loggedIn = $rootScope.globals.currentUser;
+        if (restrictedPage && !loggedIn) {
+            $location.path('/');
+        }
+    })
+	
+	
+	
+	
+
+//	 .when('/afterblog',{
+//	 templateUrl : 'blog/afterbloglists.html',
+//	  controller:'BlogController',
+//	  controllerAs:'blogCtrl'
+//	
+//	 });
+	
+});
+
+//myapp.run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+//myapp.run(function ($rootScope, $location, $cookies, $http) {
+//    // keep user logged in after page refresh
+//    $rootScope.globals = $cookies.getObject('globals') || {};
+//    if ($rootScope.globals.currentUser) {
+//        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+//    }
+//});
+
+
+
+
+
+
